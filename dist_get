@@ -53,7 +53,7 @@ unarchive() {
 		tar.gz)
 			if have_binary tar; then
 				echo "==> using 'tar' to extract binary from archive"
-				cat "$infile" | tar -O -x "$distname/$distname" > "$outfile"
+				cat "$infile" | tar -O -z -x "$distname/$distname" > "$outfile"
 			else
 				die "no binary on system for extracting tar files"
 			fi
